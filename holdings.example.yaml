@@ -1,0 +1,35 @@
+# Synthetic example. Copy to holdings.yaml and put your real numbers there
+# (holdings.yaml is gitignored). Every section is optional - delete what you
+# don't hold.
+
+# Yahoo symbols: NSE = .NS, BSE = .BO. cost = your average buy price per share.
+stocks:
+  - {sym: RELIANCE.NS, qty: 10,  cost: 1120}
+  - {sym: INFY.NS,     qty: 25,  cost: 1450}
+  - {sym: HDFCBANK.NS, qty: 15,  cost: 1610}
+
+# Find `code` with:  python3 portfolio.py --find "parag parikh flexi"
+# cost = your average NAV. Use the Direct Plan codes if you hold direct.
+funds:
+  - {code: 122639, units: 340.5, cost: 52.1}   # Parag Parikh Flexi Cap - Direct
+  - {code: 120503, units: 180.0, cost: 88.4}   # Axis ELSS Tax Saver - Direct
+
+# Balance as printed on your last statement, plus the date it was printed.
+# Value is compounded forward from there; refresh `asof` once a year.
+epf: {balance: 500000, asof: 2026-03-31, rate: 8.25}
+ppf: {balance: 300000, asof: 2026-03-31, rate: 7.10}
+
+# NPS Trust's NAV endpoint is blocked from the corp network, so this is the
+# balance you type. Update it when you check the CRA portal.
+nps: {balance: 200000}
+
+# Quarterly compounding, frozen once matured.
+fd:
+  - {label: HDFC 2yr,     principal: 100000, rate: 7.25, start: 2025-01-10, months: 24}
+  - {label: SBI tax saver, principal: 150000, rate: 6.90, start: 2024-06-01, months: 60}
+
+# premium_pct is the calibration knob: international spot runs below Indian
+# retail because of import duty and GST. Set it once so the per-gram rate the
+# page shows matches what your jeweller quotes, then leave it alone.
+gold:   {grams: 50,  cost_per_g: 6200, premium_pct: 6.0}
+silver: {grams: 500, cost_per_g: 75,   premium_pct: 8.0}
