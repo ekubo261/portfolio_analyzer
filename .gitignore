@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Personal financial data and the generated page - never commit these.
+holdings.yaml
+portfolio.html
+
+# Served copy of the page.
+site/
+
+# News cache and generated advice.
+.news_cache.json
+advice.json
