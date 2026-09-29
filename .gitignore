@@ -227,3 +227,6 @@ site/
 # News cache and generated advice.
 .news_cache.json
 advice.json
+
+# Private planning notes - local only, moved between machines by hand.
+ROADMAP.md
